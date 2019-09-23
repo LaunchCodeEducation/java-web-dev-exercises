@@ -1,4 +1,4 @@
-package org.launchcode.java.demos.javawebdevelopment;
+package org.launchcode.java.demos;
 
 /**
  * From "Java Web Development"
