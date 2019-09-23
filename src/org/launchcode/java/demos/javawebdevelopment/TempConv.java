@@ -9,14 +9,15 @@ public class TempConv {
     public static void main(String[] args) {
         double fahrenheit;
         double celsius;
-        Scanner in;
+        Scanner input;
 
-        in = new Scanner(System.in);
-        System.out.println("Enter the temperature in F: ");
-        fahrenheit = in.nextDouble();
+        input = new Scanner(System.in);
+        System.out.println("Enter the temperature in Fahrenheit: ");
+        fahrenheit = input.nextDouble();
+        input.close();
 
         celsius = (fahrenheit - 32) * 5.0/9.0;
-        System.out.println("The temperature in C is: " + celsius);
+        System.out.println("The temperature in Celsius is: " + celsius + " degrees.");
     }
 
 }
