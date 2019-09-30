@@ -5,7 +5,7 @@ import java.util.Scanner;
 /**
  * From "Java Web Development"
  */
-public class TempConv {
+public class TempConverter {
     public static void main(String[] args) {
         double fahrenheit;
         double celsius;
@@ -16,8 +16,8 @@ public class TempConv {
         fahrenheit = input.nextDouble();
         input.close();
 
-        celsius = (fahrenheit - 32) * 5.0/9.0;
-        System.out.println("The temperature in Celsius is: " + celsius + " degrees.");
+        celsius = (fahrenheit - 32) * 5/9;
+        System.out.println("The temperature in Celsius is: " + celsius + "°C.");
     }
 
 }
