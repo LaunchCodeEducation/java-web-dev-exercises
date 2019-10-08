@@ -3,7 +3,7 @@ package org.launchcode.java.demos.collections;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Gradebook {
+public class ArrayListGradebook {
 
     public static void main(String[] args) {
 
