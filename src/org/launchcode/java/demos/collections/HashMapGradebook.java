@@ -5,6 +5,7 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class HashMapGradebook {
+
     public static void main(String[] args) {
 
         HashMap<String, Double> students = new HashMap<>();
