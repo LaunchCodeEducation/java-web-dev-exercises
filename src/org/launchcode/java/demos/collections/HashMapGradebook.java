@@ -9,7 +9,7 @@ public class HashMapGradebook {
     public static void main(String[] args) {
 
         HashMap<String, Double> students = new HashMap<>();
-        Scanner in = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
         String newStudent;
 
         System.out.println("Enter your students (or ENTER to finish):");
@@ -18,15 +18,15 @@ public class HashMapGradebook {
         do {
 
             System.out.print("Student: ");
-            newStudent = in.nextLine();
+            newStudent = input.nextLine();
 
             if (!newStudent.equals("")) {
                 System.out.print("Grade: ");
-                Double newGrade = in.nextDouble();
+                Double newGrade = input.nextDouble();
                 students.put(newStudent, newGrade);
 
                 // Read in the newline before looping back
-                in.nextLine();
+                input.nextLine();
             }
 
         } while(!newStudent.equals(""));

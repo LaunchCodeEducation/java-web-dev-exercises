@@ -9,14 +9,14 @@ public class ArrayListGradebook {
 
         ArrayList<String> students = new ArrayList<>();
         ArrayList<Double> grades = new ArrayList<>();
-        Scanner in = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
         String newStudent;
 
         System.out.println("Enter your students (or ENTER to finish):");
 
         // Get student names
         do {
-            newStudent = in.nextLine();
+            newStudent = input.nextLine();
 
             if (!newStudent.equals("")) {
                 students.add(newStudent);
@@ -27,7 +27,7 @@ public class ArrayListGradebook {
         // Get student grades
         for (String student : students) {
             System.out.print("Grade for " + student + ": ");
-            Double grade = in.nextDouble();
+            Double grade = input.nextDouble();
             grades.add(grade);
         }
 
