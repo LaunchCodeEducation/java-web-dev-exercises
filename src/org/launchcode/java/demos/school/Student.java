@@ -1,5 +1,8 @@
 package org.launchcode.java.demos.school;
 
+// Start working here with your Student class.
+// To instantiate the Student class, add your code to the main in the file, SchoolPractice.
+
 public class Student {
 
     private String name;
