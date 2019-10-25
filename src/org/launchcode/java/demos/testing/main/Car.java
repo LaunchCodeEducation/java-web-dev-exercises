@@ -76,6 +76,12 @@ public class Car {
     {
         //adjust fuel based on mpg and miles requested to drive
         double maxDistance = this.milesPerGallon * this.gasTankLevel;
+        /**the double below uses some syntax called the ternary operator.
+         * if the value of miles is greater than the value of maxDistance,
+         * then milesAbleToTravel = maxDistance.
+         * otherwise, if miles is not greater than maxDistance,
+         * then milesAbleToTravel = miles
+         */
         double milesAbleToTravel = miles > maxDistance ? maxDistance : miles;
         double gallonsUsed = milesAbleToTravel / this.milesPerGallon;
         this.gasTankLevel = this.gasTankLevel - gallonsUsed;
