@@ -31,6 +31,8 @@ public class Student {
     // TODO: Complete the getGradeLevel method here:
     public String getGradeLevel() {
         // Determine the grade level of the student based on numberOfCredits
+        // replace this return statement
+        return "";
     }
 
     // TODO: Complete the addGrade method.
