@@ -28,12 +28,11 @@ public class Student {
         return (this.name + " has a GPA of: " + this.gpa);
     }
 
-    // TODO: Complete the getGradeLevel method here:
-    public String getGradeLevel() {
-        // Determine the grade level of the student based on numberOfCredits
-        // replace this return statement
-        return "";
-    }
+
+    // TODO: Uncomment and complete the getGradeLevel method here:
+    //    public String getGradeLevel() {
+    //        // Determine the grade level of the student based on numberOfCredits
+    //    }
 
     // TODO: Complete the addGrade method.
     public void addGrade(int courseCredits, double grade) {
