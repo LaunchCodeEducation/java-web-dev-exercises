@@ -1,4 +1,4 @@
-package org.launchcode.java.demos.lsn4school;
+package org.launchcode.java.demos.lsn4classes2;
 
 public class Student {
 
@@ -28,7 +28,8 @@ public class Student {
         return (this.name + " has a GPA of: " + this.gpa);
     }
 
-    // TODO: Uncomment and complete the getGradeLevel method here:
+
+     //TODO: Uncomment and complete the getGradeLevel method here:
 //    public String getGradeLevel() {
 //        // Determine the grade level of the student based on numberOfCredits
 //    }

@@ -1,4 +1,4 @@
-package org.launchcode.java.demos.collections;
+package org.launchcode.java.demos.lsn2controlflowandcollections;
 
 import java.util.HashMap;
 import java.util.Map;
