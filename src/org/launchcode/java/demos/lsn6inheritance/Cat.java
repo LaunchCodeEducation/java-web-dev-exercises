@@ -1,4 +1,4 @@
-package org.launchcode.java.demos.inheritance;
+package org.launchcode.java.demos.lsn6inheritance;
 
 public class Cat {
 

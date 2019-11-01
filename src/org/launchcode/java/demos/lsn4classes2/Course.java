@@ -1,4 +1,4 @@
-package org.launchcode.java.demos.lsn4school;
+package org.launchcode.java.demos.lsn4classes2;
 
 import java.util.ArrayList;
 

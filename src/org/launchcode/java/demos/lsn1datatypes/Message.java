@@ -1,4 +1,4 @@
-package org.launchcode.java.demos.datatypes;
+package org.launchcode.java.demos.lsn1datatypes;
 
 public class Message {
 
