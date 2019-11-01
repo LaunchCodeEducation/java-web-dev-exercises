@@ -1,4 +1,4 @@
-package org.launchcode.java.demos.lsn2collections;
+package org.launchcode.java.demos.lsn2controlflowandcollections;
 
 import java.util.ArrayList;
 import java.util.Scanner;
