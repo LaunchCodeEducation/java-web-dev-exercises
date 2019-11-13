@@ -9,8 +9,8 @@ public class HashMapPractice {
         HashMap<Integer, String> students = new HashMap<>();
         Scanner input = new Scanner(System.in);
         while (true) {
-            System.out.println("What is the student's ID number? Enter 'finished' to finish student list.");
-            if (input.next().toLowerCase().equals("finished")) {
+            System.out.println("What is the student's ID number? Enter string to finish student list.");
+            if (!input.hasNextInt()) {
                 break;
             } else {
                 Integer id = input.nextInt();
