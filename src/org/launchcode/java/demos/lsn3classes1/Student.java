@@ -19,22 +19,27 @@ public class Student {
     }
 
     public int getStudentId() {
+
         return studentId;
     }
 
     protected void setStudentId(int aStudentId) {
+
         studentId = aStudentId;
     }
 
     public int getNumberOfCredits() {
+
         return numberOfCredits;
     }
 
     protected void setNumberOfCredits(int aNumberOfCredits) {
+
         numberOfCredits = aNumberOfCredits;
     }
 
     public double getGpa() {
+
         return gpa;
     }
 
