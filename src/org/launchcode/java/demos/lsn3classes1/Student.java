@@ -17,6 +17,7 @@ public class Student {
     public void setName(String aName) {
         name = aName;
     }
+
     //studentId
     public int getStudentId() {
         return studentId;
@@ -25,6 +26,7 @@ public class Student {
     public void setStudentId(int aStudentId) {
         studentId = aStudentId;
     }
+
     //numberOfCredits
     public int getNumberOfCredits() {
         return numberOfCredits;
@@ -33,6 +35,7 @@ public class Student {
     public void setNumberOfCredits(int aNumberOfCredits) {
         numberOfCredits = aNumberOfCredits;
     }
+
     //gpa
     public double getGpa() {
         return gpa;
@@ -42,4 +45,7 @@ public class Student {
         gpa = aGpa;
     }
 
+    public String toString() {
+        return (name + " has a GPA of: " + gpa);
+    }
 }
