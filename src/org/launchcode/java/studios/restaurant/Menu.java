@@ -11,40 +11,12 @@ public class Menu {
     private String chef;
     private String restaurantDescription;
     private String restaurantHours;
-    private static ArrayList<MenuItem> menuItemList = new ArrayList<>();
-    private static Menu menu;
-    private static Scanner input = new Scanner(System.in);
+    private ArrayList<MenuItem> menuItemList = new ArrayList<>();
 
-    public static void main(String[] args) {
-//        Scanner input = new Scanner(System.in);
-        System.out.println("Main menu: Please enter the basic properties of your menu. If you already have a menu, enter 'update menu'. Otherwise, enter any key.");
-        if (!(input.next().toLowerCase().equals("update menu"))) {
-            updateMenuItem();
-        }
-        System.out.println("Do you want to add a new menu item? If so, enter 'new'.");
-        if (input.next().toLowerCase().equals("new")) {
-            newMenuItem();
-            System.out.println("To see one of your menu items, enter 'print item'. To add another item, enter 'new item'.");
-            if (input.next().toLowerCase().equals("print item")) {
-                printMenuItem();
-            } else if (input.next().toLowerCase().equals("new item")) {
-                newMenuItem();
-            }
-        } else {
-            System.out.println("Would you like to update an existing menu item? If so, enter 'update'.");
-            if (input.nextLine().toLowerCase().equals("update")) {
-                updateMenuItem();
-            }
-        }
-        System.out.println("Would you like to print out your entire menu? If so, enter 'print'.");
-        if (input.next().toLowerCase().equals("print")) {
-            printMenu();
-        } else {
-            main(new String[] {"return to main menu"});
-        }
-    }
 
-    private Menu(String restaurantName, Calendar lastUpdated, Integer numberOfItems, String chef, String restaurantDescription, String restaurantHours) {
+
+
+    public Menu(String restaurantName, Calendar lastUpdated, Integer numberOfItems, String chef, String restaurantDescription, String restaurantHours) {
         this.restaurantName = restaurantName;
         this.lastUpdated = lastUpdated;
         this.numberOfItems = numberOfItems;
@@ -53,10 +25,9 @@ public class Menu {
         this.restaurantHours = restaurantHours;
     }
 
-    private static void newMenuItem() {
-//        Scanner input = new Scanner(System.in);
+    void newMenuItem() {
+        Scanner input = new Scanner(System.in);
         System.out.println("Please enter the name of the menu item.");
-        input.nextLine();
         String aName = input.nextLine();
         System.out.println("Please enter the price of the menu item.");
         Double aPrice = input.nextDouble();
@@ -66,14 +37,19 @@ public class Menu {
         System.out.println("Please enter the category (entree, appetizer, etc.) of the menu item.");
         String aCategory = input.nextLine();
         MenuItem item = new MenuItem(aName, aPrice, aDescription, aCategory, true);
+        if (menuItemList.contains(item)) {
+            System.out.println("Menu item already exists. Please enter a new item.");
+            newMenuItem();
+        }
         menuItemList.add(item);
+        this.lastUpdated = Calendar.getInstance();
         System.out.println("Menu item has been created!");
         String[] stringArray = {"menu item created", "return to main menu"};
-        main(stringArray);
+        Restaurant.main(stringArray);
     }
 
-    private static void printMenuItem() {
-//        Scanner input = new Scanner(System.in);
+    void printMenuItem() {
+        Scanner input = new Scanner(System.in);
         System.out.println("Please enter the name of the item you'd like to print.");
         String itemNameToPrint = input.next();
         for (MenuItem menuItem : menuItemList) {
@@ -84,12 +60,12 @@ public class Menu {
                         menuItem.getCategory() + "\nNew item!");
             }
         }
-        main(new String[]{"menu item printed", "return to main menu"});
+        Restaurant.main(new String[]{"menu item printed", "return to main menu"});
     }
 
 
-    private static void updateMenuItem() {
-//        Scanner input = new Scanner(System.in);
+    void updateMenuItem() {
+        Scanner input = new Scanner(System.in);
         System.out.print("Please state the name of the menu item you'd like to change.");
         input.nextLine();
         String aName = input.nextLine();
@@ -97,8 +73,15 @@ public class Menu {
         for (MenuItem i : menuItemList) {
             if (aName.equals(i.getName())) {
                 isInList = true;
-                System.out.println("What property would you like to change about item " + aName + " ?");
+                System.out.println("What property would you like to change about item " + aName + " ?" +
+                        " If you'd like to delete the item, enter 'delete'.");
                 String property = input.next();
+                if (property.toLowerCase().equals("delete")) {
+                    System.out.println("Are you sure you want to delete item + " + aName + "? Enter 'yes' or 'no'.");
+                    if (input.next().toLowerCase().equals("yes")) {
+                        menuItemList.remove(i);
+                    }
+                }
                 System.out.println("Please type the new " + property + " of item " + aName + ".");
                 if (property.toLowerCase().equals("price")) {
                     Double value = input.nextDouble();
@@ -124,12 +107,13 @@ public class Menu {
 //                    }
                     System.out.println("Menu item does not have this property. To return to the main menu, enter 'main'.");
                     if (input.next().toLowerCase().equals("main")) {
-                        main(new String[] {"return to main"});
+                        Restaurant.main(new String[] {"return to main"});
                     }
                     else {
                         updateMenuItem();
                     }
                 }
+                this.lastUpdated = Calendar.getInstance();
                 System.out.println("Item " + aName + "'s property " + property + " has been changed! " +
                         "To return to the main menu, enter 'main'. To edit another existing item, enter 'edit'.");
                 if (input.next().toLowerCase().equals("edit")) {
@@ -139,7 +123,7 @@ public class Menu {
                     if (input.next().toLowerCase().equals("yes")) {
                         printMenu();
                     }
-                    main(new String[] {"return to main menu"});
+                    Restaurant.main(new String[] {"return to main menu"});
                 }
             }
         }
@@ -153,30 +137,17 @@ public class Menu {
         }
     }
 
-    public static void printMenu() {
-        System.out.println(menu);
+    void printMenu() {
+        System.out.println("" + this.restaurantName + "\nRestaurant Description: " + this.restaurantDescription +
+                "\nHours of Operation: " + this.restaurantHours + "\nChef: " + this.chef + "\nMenu was last updated on "
+                + this.lastUpdated.MONTH + "/" + this.lastUpdated.DAY_OF_MONTH + "/" + this.lastUpdated.YEAR +
+                "\nNumber of items on the menu: " + this.numberOfItems);
         for (MenuItem i : menuItemList) {
-            System.out.println(i.getAll());
+            System.out.println(i.getAll() + "\n");
         }
-        main(new String[] {"menu printed", "return to main menu"});
+        Restaurant.main(new String[] {"menu printed", "return to main menu"});
     }
 
-    public static void createMenu() {
-//        Scanner input = new Scanner(System.in);
-        System.out.println("First, what is the name of your restaurant?");
-        input.nextLine();
-        String nameOfRestaurant = input.nextLine();
-        System.out.println("Who is the chef?");
-        String nameOfChef = input.nextLine();
-        System.out.println("Please provide a description of the restaurant.");
-        String restaurantDescription = input.nextLine();
-        System.out.println("How many items will be on the menu?");
-        Integer numItems = input.nextInt();
-        input.nextLine();
-        System.out.println("What are the restaurant's hours of operation?");
-        String restaurantHours = input.nextLine();
-        Calendar lastUpdated = Calendar.getInstance();
-        menu = new Menu(nameOfRestaurant, lastUpdated, numItems, nameOfChef, restaurantDescription, restaurantHours);
-    }
+
 
 }
