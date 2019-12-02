@@ -25,8 +25,23 @@ public class CarTest {
         assertEquals(10, test_car.getGasTankLevel(), .001);
     }
     //TODO: gasTankLevel is accurate after driving within tank range
-
+    @Test
+       public void  testCar() {
+      test_car.drive(50);
+      assertEquals(9, test_car.getGasTankLevel(), .001);
+       test_car.addGas(5);
+        fail("Shouldn't get here, car cannot have more gas in tank than the size of the tank");
+    }
     //TODO: gasTankLevel is accurate after attempting to drive past tank range
+    //imulate the Car travelling farther than it’s gasTankLevel allows
+    @Test
+    public void  testGasLimitCar() {
+        test_car.drive(500);
+        assertEquals(9, test_car.getGasTankLevel(), .001);
+    }
     //TODO: can't have more gas than tank size, expect an exception
-
+    @Test(expected = IllegalArgumentException.class)
+    public void testGasOverfillException() {
+        this.setGasTankLevel(gas + this.getGasTankLevel());
+    }
 }
