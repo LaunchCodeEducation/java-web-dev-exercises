@@ -12,6 +12,8 @@ public class Area {
 
 
         while(input.hasNext()){
+
+
             try{
             radius = input.nextDouble();
                 if( radius < 0 ){
@@ -21,13 +23,14 @@ public class Area {
                     System.out.println("The area of circle of radius " + radius + " is: " + Circle.getArea(radius));
                     break;
                 }
+
             }
             catch(Exception e){
                    System.out.println("Invalid input, Please use only number");
                 break;
             }
-            System.out.println("Please enter some number [1-9]");
 
+            System.out.println("Please enter some number [1-9]");
 
         }
         input.close();
