@@ -1,6 +1,7 @@
 
-import java.util.*;
-import  java.util.Scanner;
+
+        import java.util.*;
+        import  java.util.Scanner;
 
 public class CountingChar {
 
@@ -12,6 +13,7 @@ public class CountingChar {
         System.out.print("please enter some string: ");
         Scanner input = new Scanner(System.in);
         str = input.nextLine();
+        str=str.replaceAll("[^a-zA-Z]","").toLowerCase();
         char[] chars = str.toCharArray();
         ArrayList<Character> array = new ArrayList<>();
         Set<Character> set = new HashSet<Character>();
