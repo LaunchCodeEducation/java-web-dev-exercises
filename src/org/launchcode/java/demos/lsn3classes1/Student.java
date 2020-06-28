@@ -55,6 +55,25 @@ public class Student {
         }
     }
 
+    //5.3.1 Add custom equals() and toString() methods to the Student class.
+    public boolean equals(Object toBeCompared) {
+        if (toBeCompared == this) {
+            return true;
+        }
+        if (toBeCompared == null) {
+            return false;
+        }
+        if (toBeCompared.getClass() != getClass()) {
+            return false;
+        }
+        Student theStudent = (Student) toBeCompared;
+        return theStudent.getStudentId() == getStudentId();
+    }
+    public String toString() {
+        return name + " (Credits: " + numberOfCredits + ", GPA: " + gpa + ")";
+    }
+
+
     //4.1. Add necessary getters and setters
 
     public String getName() {
@@ -76,5 +95,9 @@ public class Student {
     }
     public void setGpa(double gpa) {
         this.gpa = gpa;
+    }
+
+    public int getStudentId() {
+        return studentId;
     }
 }
