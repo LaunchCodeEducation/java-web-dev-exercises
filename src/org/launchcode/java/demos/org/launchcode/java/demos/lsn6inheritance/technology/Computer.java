@@ -1,12 +1,12 @@
 package org.launchcode.java.demos.lsn6inheritance.technology;
 
 public class Computer {
+    private static int ramGB = 4;
     private String brand;   //1a. parent class w/ 3 properties
     private String name;
-    private Integer ramGB;
-    private boolean isLoud;
+    private static boolean isLoud;
 
-    public Computer (String aBrand, String aName, Integer aRamGB){
+    public Computer (String aBrand, String aName, int aRamGB){
         brand = aBrand; //1a. parent class w/ 1 constructor
         name = aName;
         ramGB = aRamGB;
@@ -28,12 +28,12 @@ public class Computer {
         this.name = name;
     }
 
-    public Integer getRamGB() {
+    public int getRamGB() {
         return ramGB;
     }
 
-    public void setRamGB(Integer ramGB) {
-        this.ramGB = ramGB;
+    public void setRamGB(int ramGB) {
+        Computer.ramGB = ramGB;
     }
 
 
@@ -44,12 +44,11 @@ public class Computer {
     public void setLoud(boolean loud) {
         isLoud = loud;
     }
-    private void makesNoise() {
-        if (this.ramGB >= 8) {
-            isLoud = false;
-        } else {
-            isLoud = true;
+    public static boolean makesNoise() {
+        if (ramGB < 8) {
+            return isLoud = true;
         }
+        else return isLoud = false;
     }
 
 }
