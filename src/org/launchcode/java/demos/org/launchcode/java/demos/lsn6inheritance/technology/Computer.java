@@ -16,9 +16,9 @@ public class Computer {
         return brand;
     }
 
-    public void setBrand(String brand) {
-        this.brand = brand;
-    }
+//    public void setBrand(String brand) {
+//        this.brand = brand;
+//    }
 
     public String getName() {
         return name;

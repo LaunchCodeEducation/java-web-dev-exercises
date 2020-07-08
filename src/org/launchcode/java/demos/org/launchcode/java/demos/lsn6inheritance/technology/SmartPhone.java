@@ -1,20 +1,28 @@
 package org.launchcode.java.demos.lsn6inheritance.technology;
 //Didn't get to finish the method or write tests for it.
 public class SmartPhone extends Computer {
-    private String operatingSystem; //1b. 1 additional property & method
+
 
     public SmartPhone(String aBrand, String aName, int aRamGB) {
         super(aBrand,
                 aName,
                 aRamGB);
     }
-
+    private String operatingSystem;
+//    private int aRamGB = 4;
+    //1b. 1 additional property & method
     public String getOperatingSystem() {
         return operatingSystem;
     }
 
     public void setOperatingSystem(String operatingSystem) {
         this.operatingSystem = operatingSystem;
+    }
+
+    private void printDeviceInfo() {
+        System.out.println(getBrand() + " " +
+                getName() + " " +
+                getRamGB() + "GB");
     }
 
 //    private canSyncWithComputer(String aOperatingSystem) {

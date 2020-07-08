@@ -1,7 +1,6 @@
 package org.launchcode.java.demos.lsn6inheritance.technology;
 
 public class Laptop extends Computer {
-//    private String processor; //1.b child class has 1 more property
     private static boolean AppropriateProcessor = false;
     public Laptop(String aBrand, String aName, int aRamGB) {
         super(aBrand, aName, aRamGB);
