@@ -6,7 +6,7 @@ course.
 
 ## Requirements
 
-The classes in this repo require Java13. Please refer to the book referenced
+The classes in this repo require Java11. Please refer to the book referenced
 above for instructions on how to download and use the examples.
 
 ## Updating
