@@ -10,8 +10,8 @@ public class Area {
         System.out.println("Enter a radius: ");
         double radius = input.nextDouble();
         input.close();
-        double area = 3.14 * radius * radius;
-        System.out.println("The area of a circle of radius " + radius + " is: " + area);
+        double areaOfACircle = Circle.getArea(radius);
+        System.out.println("The area of a circle of radius " + radius + " is: " + areaOfACircle);
 
     }
 }
