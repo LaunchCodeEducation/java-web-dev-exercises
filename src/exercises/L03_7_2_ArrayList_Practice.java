@@ -7,7 +7,6 @@ import java.util.Scanner;
 
 public class L03_7_2_ArrayList_Practice {
     public static void main(String[] args) {
-
         System.out.println("*** Sum of Even Numbers ***");
         printEven();
 
@@ -20,6 +19,11 @@ public class L03_7_2_ArrayList_Practice {
 
         System.out.println("*** Prompt for Word-Length ***");
         printWords();
+
+        System.out.println();
+
+        System.out.println("*** Convert String to ArrayList ***");
+        convertStrToArrList();
     }
 
 //        #1 Write a static method to find the sum of all the even numbers in
@@ -86,4 +90,25 @@ public class L03_7_2_ArrayList_Practice {
             }
         }
     }
+
+//    #4 BONUS: Instead of creating our own list of words, what if we want to
+//    use the string from the Array Practice section? Search “Java convert
+//    String to ArrayList” online to see how to split a string into the more
+//    flexible ArrayList collection.
+
+    public static void convertStrToArrList() {
+        String str = "\"Heir presumptive, William Walter Elliot, Esq., great" +
+                " grandson of the second Sir Walter.\"";
+
+        String[] strArr = str.split(" ");
+
+        List<String> arrList = new ArrayList<>(
+                Arrays.asList(strArr)
+        );
+
+        for (String word : arrList) {
+            System.out.println(word.trim());
+        }
+    }
+
 }
