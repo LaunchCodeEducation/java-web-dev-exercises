@@ -66,7 +66,7 @@ public class L03_7_2_ArrayList_Practice {
 //    search.
 
     public static void printWords() {
-        ArrayList<String> strArrList = new ArrayList<> (
+        List<String> strArrList = new ArrayList<> (
           Arrays.asList("Sir", "Walter", "Scott", "was", "a", "Scottish",
                   "historical", "novelist")
         );
