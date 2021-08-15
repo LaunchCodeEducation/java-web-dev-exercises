@@ -43,6 +43,5 @@ public class L03_7_1_Array_Practice {
 
         System.out.println(" Change delimiter ");
         System.out.println(Arrays.toString(strToArr));
-
     }
 }
