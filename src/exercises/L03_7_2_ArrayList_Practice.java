@@ -3,6 +3,7 @@ package exercises;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Scanner;
 
 public class L03_7_2_ArrayList_Practice {
     public static void main(String[] args) {
@@ -18,7 +19,7 @@ public class L03_7_2_ArrayList_Practice {
         System.out.println();
 
         System.out.println("*** Prompt for Word-Length ***");
-
+        printWords();
     }
 
 //        #1 Write a static method to find the sum of all the even numbers in
@@ -57,7 +58,32 @@ public class L03_7_2_ArrayList_Practice {
         }
     }
 
-    public static void printWords() {
+//    #3 Modify your code to prompt the user to enter the word length for the
+//    search.
 
+    public static void printWords() {
+        ArrayList<String> strArrList = new ArrayList<> (
+          Arrays.asList("Sir", "Walter", "Scott", "was", "a", "Scottish",
+                  "historical", "novelist")
+        );
+
+        Scanner input = new Scanner(System.in);
+        int wordLength = -1;
+
+        System.out.print("Enter an integer for word length: ");
+
+        do {
+            while (!input.hasNextInt()) {
+                input.nextLine();
+                System.out.print("Positive integers only. Please try again.");
+            }
+            wordLength = input.nextInt();
+        } while (wordLength <= 0);
+
+        for (String word : strArrList) {
+            if (word.length() == wordLength) {
+                System.out.println(word);
+            }
+        }
     }
 }
