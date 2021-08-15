@@ -20,6 +20,8 @@ public class Area {
             radius = input.nextDouble();
         } while (radius <= 0);
 
+        input.close();
+
         areaOfCircle = Circle.getArea(radius);
         areaOfCircle = Math.round(areaOfCircle * 100.0) / 100.0;
         System.out.println("The are of a circle of radius " + radius + " is: " + areaOfCircle);
