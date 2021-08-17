@@ -52,14 +52,6 @@ public class CountCharacters {
 
         countChars(quoteChArr, charCount);
 
-//        for (char ch : quoteChArr) {
-//            if (charCount.containsKey(ch)) {
-//                charCount.put(ch, charCount.get(ch) + 1);
-//            } else {
-//                charCount.put(ch, 1);
-//            }
-//        }
-
         printHashMap(charCount);
     }
 
@@ -75,15 +67,7 @@ public class CountCharacters {
 
         input.close();
 
-        countChars(userInputChArr, charCount);
-
-//        for (char ch : userInputChArr) {
-//            if (charCount.containsKey(ch)) {
-//                charCount.put(ch, charCount.get(ch) + 1);
-//            } else {
-//                charCount.put(ch, 1);
-//            }
-//        }
+        charCount = countChars(userInputChArr, charCount);
 
         printHashMap(charCount);
     }
@@ -94,15 +78,16 @@ public class CountCharacters {
 
         try {
             URL url = new URL("https://www.gutenberg.org/files/105/105-h/105-h.htm#chap01");
-//            Scanner input = new Scanner(url.openStream());
             BufferedReader br = new BufferedReader(new InputStreamReader(url.openStream()));
 
             String str;
             while ((str = br.readLine()) != null) {
-//                System.out.println(str);
+                str = str.toLowerCase();
                 charArr = str.toCharArray();
+                charCount = countChars(charArr, charCount);
             }
             br.close();
+            printHashMap(charCount);
         } catch (IOException e) {
             e.printStackTrace();
         }
