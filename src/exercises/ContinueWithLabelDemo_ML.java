@@ -1,6 +1,6 @@
 package exercises;
 
-class ContinueWithLabelDemo {
+class ContinueWithLabelDemo_ML {
     public static void main(String[] args) {
 
         String searchMe = "Look for a substring in me";
