@@ -1,6 +1,6 @@
 package exercises;
 
-public class L04_3_2_2_Student_ML {
+public class L04_3_2_1_Student_ML {
     private String name;
     private int studentId;
     private int numberOfCredits = 0;

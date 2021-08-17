@@ -1,8 +1,8 @@
 package exercises;
 
-public class L04_3_2_2_StudentRunner_ML {
+public class L04_3_2_1_StudentRunner_ML {
     public static void main(String[] args) {
-        L04_3_2_2_Student_ML aStudent = new L04_3_2_2_Student_ML();
+        L04_3_2_1_Student_ML aStudent = new L04_3_2_1_Student_ML();
 
         System.out.println("student name: " + aStudent.getName());
         aStudent.setName("Julia Child");
