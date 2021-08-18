@@ -1,3 +1,5 @@
+// 4.7 Exercises: Classes and Objects
+
 package exercises.school;
 
 import java.util.ArrayList;
@@ -5,20 +7,13 @@ import java.util.List;
 
 public class SchoolRunner {
     public static void main(String[] args) {
-        testStudent();
+        ArrayList<Student> studentsArrList = testStudent();
         System.out.println();
-        testCourse();
+        Teacher profGrimson = testTeacher();
+        testCourse(profGrimson, studentsArrList);
     }
 
-    private static void testStudent() {
-        Student newStudent = new Student("May", 1, 1, 4.0);
-        System.out.println(newStudent.getName());
-    }
-
-    protected static void testCourse() {
-        Course newCourse =
-                new Course("Intro to CS Using Python", "6.001.x", 5, "Prof. Eric Grimson");
-
+    private static ArrayList<Student> testStudent() {
         Student adrian = new Student("Adrian", 1);
         Student beatrice = new Student("Beatrice", 2);
         Student charlene = new Student("Charlene", 3);
@@ -28,12 +23,25 @@ public class SchoolRunner {
                 List.of(adrian, beatrice, charlene, duncan)
         );
 
-        for (Student student : students) {
+        return students;
+    }
+
+    protected static void testCourse(Teacher aTeacher, ArrayList<Student> studentsArrayList) {
+        Course newCourse =
+                new Course("Intro to CS Using Python", "6.001.x", 5, aTeacher);
+
+        for (Student student : studentsArrayList) {
             newCourse.addStudentToCourse(student);
         }
 
         System.out.println("Course: " + newCourse.getSubject());
+        System.out.println("Instructor: Prof. " + newCourse.getInstructor().getFirstName() + " "
+                + newCourse.getInstructor().getLastName());
         System.out.print("Enrollment: ");
         newCourse.printEnrollment();
+    }
+
+    protected static Teacher testTeacher() {
+        return new Teacher("Eric", "Grimson", "CS", 37);
     }
 }

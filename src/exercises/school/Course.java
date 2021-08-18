@@ -1,3 +1,5 @@
+// 4.7 Exercises: Classes and Objects
+
 package exercises.school;
 
 import java.util.ArrayList;
@@ -7,10 +9,10 @@ public class Course {
     private String subject;
     private String courseNumber;
     private int courseCredit;
-    private String instructor;
+    private Teacher instructor;
     private ArrayList<Student> enrollment = new ArrayList<>();
 
-    public Course(String subject, String courseNumber, int courseCredit, String instructor) {
+    public Course(String subject, String courseNumber, int courseCredit, Teacher instructor) {
         this.subject = subject;
         this.courseNumber = courseNumber;
         this.courseCredit = courseCredit;
@@ -29,7 +31,7 @@ public class Course {
         courseCredit = aCourseCredit;
     }
 
-    public void setInstructor(String aInstructor) {
+    public void setInstructor(Teacher aInstructor) {
         instructor = aInstructor;
     }
 
@@ -49,9 +51,9 @@ public class Course {
         return courseCredit;
     }
 
-//    private ArrayList<Student> getEnrollment() {
-//        return enrollment;
-//    }
+    public Teacher getInstructor() {
+        return instructor;
+    }
 
     public void printEnrollment() {
         Iterator<Student> students = enrollment.iterator();
@@ -62,6 +64,5 @@ public class Course {
                 System.out.print(", ");
             }
         }
-
     }
 }
