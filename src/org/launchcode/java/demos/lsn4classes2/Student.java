@@ -54,8 +54,31 @@ public class Student {
     // TODO: Add your custom 'toString' method here. Make sure it returns a well-formatted String rather
     //  than just the class fields.
 
+    @java.lang.Override
+    public java.lang.String toString() {
+        return "Student{" +
+                "name='" + name + '\'' +
+                ", studentId=" + studentId +
+                ", numberOfCredits=" + numberOfCredits +
+                ", gpa=" + gpa +
+                '}';
+    }
+
     // TODO: Add your custom 'equals' method here. Consider which fields should match in order to call two
     //  Student objects equal.
+
+
+    public boolean equals(Object object) {
+        if (this == object) return true;
+        if (object == null || getClass() != object.getClass()) return false;
+        if (!super.equals(object)) return false;
+        Student student = (Student) object;
+        return studentId == student.studentId && name.equals(student.name);
+    }
+
+    public int hashCode() {
+        return java.util.Objects.hash(super.hashCode(), name, studentId);
+    }
 
     public String getName() {
         return name;
