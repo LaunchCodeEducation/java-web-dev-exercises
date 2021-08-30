@@ -13,7 +13,7 @@ public class RestaurantRunner {
         System.out.println("\n *** Updated menu - add bibimbab ***");
         aMenu.printMenu();
         aMenu.removeMenuItem(bibimbab);
-        System.out.println("\n *** Updated menu - remove bibimbab");
+        System.out.println("\n *** Updated menu - remove bibimbab ***");
         aMenu.printMenu();
     }
 

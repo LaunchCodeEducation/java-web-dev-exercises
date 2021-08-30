@@ -8,8 +8,8 @@ public class Course {
     private int credits;
     private ArrayList<Student> enrolledStudents;
 
-    public Course(String title, int credits, Teacher instructor) {
-        this.title = title;
+    public Course(String topic, int credits, Teacher instructor) {
+        this.topic = topic;
         this.credits = credits;
         this.instructor = instructor;
 

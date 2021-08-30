@@ -15,8 +15,8 @@ import java.util.Arrays;
 public class MenuItem {
     private double price;
     private String description;
-    // 8/18/2021 Potentially I might want to split cateogries out into its own
-    // class and but Studio 4.8 only wants Menu and MenuItems classes at the moment
+    // 8/18/2021 Potentially I might want to split categories out into its own
+    // class but Studio 4.8 only wants Menu and MenuItems classes at the moment
     private ArrayList<String> categories = new ArrayList<>(
             Arrays.asList("appetizer", "main course", "dessert")
     );
@@ -74,8 +74,35 @@ public class MenuItem {
     }
 
     public void printMenuItem() {
+        System.out.println("description: " + description);
         System.out.println("price: " + price);
         System.out.println("category: " + category);
-        System.out.println("description: " + description);
+        if (isNewItem) {
+            System.out.println("new item!");
+        }
+        System.out.println();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+
+        if (o == null || this.getClass() != o.getClass()) {
+            return false;
+        }
+
+        MenuItem menuItem = (MenuItem) o;
+
+        return description.equals(menuItem.description) && category.equals(menuItem.category);
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 11;
+        hash = 31 * hash + (null == description ? 0 : description.hashCode());
+        hash = 31 * hash + (null == category ? 0: category.hashCode());
+        return hash;
     }
 }

@@ -22,6 +22,9 @@ public class Menu {
 
     public void addMenuItem(MenuItem aMenuItem) {
         menuOfItems.add(aMenuItem);
+        for (MenuItem item : menuOfItems) {
+            item.setIsNewItem(false);
+        }
         this.setLastUpdate();
     }
 
