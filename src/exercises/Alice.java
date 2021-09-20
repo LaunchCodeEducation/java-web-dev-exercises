@@ -19,5 +19,6 @@ public class Alice {
         System.out.println("The new sentence is:");
 //        System.out.println(firstSentence.substring(0,index) + firstSentence.substring(index + length + 1, firstSentence.length() - 1));
         System.out.println(firstSentence.replace(query, ""));
+
     }
 }
