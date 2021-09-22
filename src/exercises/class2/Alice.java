@@ -1,4 +1,5 @@
-package exercises.2-4;
+package exercises.class2;
+
 
 import java.util.Locale;
 import java.util.Scanner;
@@ -14,7 +15,7 @@ public class Alice {
 
         System.out.println("The area is: " + length * width);
 
-        Systesm.out.println("How many miles have you driven?");
+        System.out.println("How many miles have you driven?");
         double numMiles = input.nextDouble();
 
         System.out.println("How much gas did you use? In gallons.");
