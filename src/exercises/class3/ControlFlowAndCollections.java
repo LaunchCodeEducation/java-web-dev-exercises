@@ -1,8 +1,6 @@
 package exercises.class3;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class ControlFlowAndCollections {
     public static void main(String[] args) {
@@ -52,6 +50,7 @@ public class ControlFlowAndCollections {
 
         System.out.println(calculateEvenSum((arrlist)));
 //        System.out.println(printFiveLetterWord(s1.split(" ")));
+        studentLogHashMap();
     }
 
     public static int calculateEvenSum( ArrayList<Integer> arr) {
@@ -71,5 +70,40 @@ public class ControlFlowAndCollections {
                 System.out.println(word);
             }
         }
+    }
+
+    // 3.7.3 HashMap
+    public static void studentLogHashMap() {
+        HashMap<Integer, String> studentLog = new HashMap<>();
+        Scanner input = new Scanner(System.in);
+        String newStudent;
+        Integer studentID;
+
+        System.out.println("Enter your students (or ENTER to finish):");
+
+        // Get student names and ID numbers
+        do {
+
+            System.out.println("Student: ");
+            newStudent = input.nextLine();
+
+            if (!newStudent.equals((""))) {
+                System.out.println("ID: ");
+                studentID = input.nextInt();
+                studentLog.put(studentID, newStudent);
+
+                input.nextLine();
+            }
+        } while(!newStudent.equals(""));
+
+        input.close();
+        System.out.println("\nClass roster:");
+
+        for (Map.Entry<Integer, String> student: studentLog.entrySet()) {
+            System.out.println(student.getValue() + "'s ID: " + student.getKey());
+        }
+
+        System.out.println("Number of students in the roster: " + studentLog.size());
+
     }
 }
