@@ -6,7 +6,6 @@ import java.util.Scanner;
 
 public class SetInput {
     public static String main(String filepath) {
-        System.out.println(filepath);
         String text = "";
         try {
             File myObj = new File(filepath);
@@ -14,11 +13,11 @@ public class SetInput {
             while (myReader.hasNextLine()) {
                 text += myReader.nextLine();
             }
-            System.out.println("File found");
+            System.out.println("File found, using its contents as input string");
             myReader.close();
         } catch (FileNotFoundException e) {
             text = filepath;
-            System.out.println("Input is not a valid filename, using it as input string instead.");
+            System.out.println("Input is not a valid filename, using filename as input string instead.");
         }
         return text;
     }

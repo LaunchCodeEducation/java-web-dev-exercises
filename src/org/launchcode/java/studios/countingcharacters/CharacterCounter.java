@@ -47,7 +47,7 @@ public class CharacterCounter {
 
     public static void main(String[] args) throws FileNotFoundException {
         Scanner input = new Scanner(System.in);
-        System.out.println("Enter filename.txt or string: ");
+        System.out.println("Enter full path of file or input string: ");
         String userInput = input.nextLine();
         String stringInput = SetInput.main(userInput);
         ArrayList<Character> characterArray = toArray(stringInput);
