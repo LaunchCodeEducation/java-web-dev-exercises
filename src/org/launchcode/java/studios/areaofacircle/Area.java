@@ -19,24 +19,27 @@ public class Area {
 //        System.out.println("Hello World!");
         Scanner scanny = new Scanner(System.in);
         System.out.print("What's your radius: ");
-        double radius = scanny.nextDouble();
+        double radius;
 
-        while (radius < 0) {
-            System.out.print("What's your radius: ");
-            radius = scanny.nextDouble();
-        }
+//        while (radius < 0) {
+//            System.out.print("What's your radius: ");
+//            radius = scanny.nextDouble();
+//        }
 
-//        boolean cont = true;
-////
-//        do {
-//            try {
-//                cont = false;
-//            } catch (InputMismatchException e) {
-//                cont = true;
-//                System.out.print("What's your radius: ");
-//                radius = scanny.nextDouble();
-//            }
-//        }while (cont);
+
+//
+        do {
+            try {
+                radius = scanny.nextDouble();
+            } catch (InputMismatchException e) {
+                radius = -1;
+                System.out.print("What's your radius: ");
+                scanny.next();
+            }
+            if (radius <= 0) {
+                System.out.println("Invalid input. Please enter a positive number.");
+            }
+        }while (radius <= 0);
 
 
 //        try {
