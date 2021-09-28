@@ -1,4 +1,4 @@
-package exercises;
+package exercises.Lesson1;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -10,7 +10,7 @@ public class StringSearch {
         System.out.println("Enter your search term: ");
         String searchTerm = input.nextLine().toLowerCase();
 
-        Boolean contains = sentence.toLowerCase().contains(searchTerm);
+        boolean contains = sentence.toLowerCase().contains(searchTerm);
         System.out.println("The results of your search are " + contains);
 
         System.out.println("The index of your search term is " + sentence.indexOf(searchTerm) + " and its length is " + searchTerm.length());

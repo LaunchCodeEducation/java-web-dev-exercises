@@ -1,4 +1,4 @@
-package exercises;
+package exercises.Lesson1;
 import java.util.Scanner;
 
 public class Area {
