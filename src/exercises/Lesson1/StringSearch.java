@@ -18,6 +18,5 @@ public class StringSearch {
         String newSentence = sentence.toLowerCase().replace(searchTerm, "");
         System.out.println(newSentence);
 
-
     }
    }
