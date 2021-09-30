@@ -6,6 +6,13 @@ public class Teacher {
     private String subject ;
     private int yearsTeaching;
 
+    public Teacher(String firstName, String lastName, String subject, int yearsTeaching) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.subject = subject;
+        this.yearsTeaching = yearsTeaching;
+    }
+
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
@@ -26,15 +33,9 @@ public class Teacher {
         return firstName;
     }
 
-    public String getLastName() {
-        return lastName;
-    }
+    public String getLastName() { return lastName; }
 
-    public String getSubject() {
-        return subject;
-    }
+    public String getSubject() { return subject; }
 
-    public int getYearsTeaching() {
-        return yearsTeaching;
-    }
+    public int getYearsTeaching() { return yearsTeaching; }
 }
