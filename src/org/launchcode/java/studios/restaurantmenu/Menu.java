@@ -31,4 +31,26 @@ public class Menu {
     public void addMenuItems(MenuItem item) {
         this.menuItems.add(item);
     }
+
+    public void removeItems(MenuItem item) {
+        if (this.menuItems.contains(item)) {
+            this.menuItems.remove(item);
+        } else {
+            System.out.println("Item is not in the menu");
+        }
+    }
+
+    @Override
+    public String toString() {
+        String output = "";
+        for (MenuItem i : this.getMenuItems()) {
+            output += "Item name: " + i.getItemName() + ". Description: " + i.getDescription() + ". Category: " + i.getCategory() + ". Price: " + i.getPrice() + "\n";
+        }
+        output += "Last updated: " + this.lastUpdated +"\n";
+        return output;
+    }
+
+    public String toString(MenuItem i) {
+        return "Item name: " + i.getItemName() + ". Description: " + i.getDescription() + ". Category: " + i.getCategory() + ". Price: " + i.getPrice();
+    }
 }
