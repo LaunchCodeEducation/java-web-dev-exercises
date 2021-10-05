@@ -57,22 +57,10 @@ public class Restaurant {
 //        }
 
         // check if two menu items are equal
-        MenuItem a = avocadoToast;
-        MenuItem b = avocadoToast2;
-        MenuItem c = tiramisu;
-        System.out.println("Check if custom equals function works properly..." );
-        if (a.equals(b)) {
-            System.out.println(a.getItemName() + " is the same as " + b.getItemName() + "\n");
-        } else {
-            System.out.println(a.getItemName() + " is not the same as " + b.getItemName() + "\n");
-        }
-
-        System.out.println("Check if custom equals function works properly..." );
-        if (a.equals(c)) {
-            System.out.println(a.getItemName() + " is the same as " + c.getItemName() + "\n");
-        } else {
-            System.out.println(a.getItemName() + " is not the same as " + c.getItemName() + "\n");
-        }
+        System.out.println("Checking if two items are the same...");
+        checkEquality(avocadoToast, avocadoToast2);
+        checkEquality(avocadoToast, tiramisu);
+        System.out.println();
 
         // check if item is new
         System.out.println("Checking if a given item is new... ");
@@ -84,4 +72,13 @@ public class Restaurant {
         System.out.println("Print menu to prove that avocadoToast2 was not added...");
         System.out.println(ourMenu);
     }
+
+    public static void checkEquality(MenuItem item1, MenuItem item2) {
+        if (item1.equals(item2)) {
+            System.out.println(item1.getItemName() + " is the same as " + item2.getItemName());
+        } else {
+            System.out.println(item1.getItemName() + " is not the same as " + item2.getItemName());
+        }
+    }
+
 }
