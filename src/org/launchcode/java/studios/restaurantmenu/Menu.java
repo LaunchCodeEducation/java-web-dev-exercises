@@ -29,8 +29,12 @@ public class Menu {
     }
 
     public void addMenuItems(MenuItem item, Date lastUpdated) {
-        this.lastUpdated = lastUpdated;
-        this.menuItems.add(item);
+        if (!this.menuItems.contains(item)) {
+            this.lastUpdated = lastUpdated;
+            this.menuItems.add(item);
+        } else {
+            System.out.println("Item '" + item.getItemName() + "' already exists. Will not be added to the menu");
+        }
     }
 
     public void removeItems(MenuItem item, Date lastUpdated) {

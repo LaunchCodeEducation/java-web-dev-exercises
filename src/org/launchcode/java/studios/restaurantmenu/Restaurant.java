@@ -57,14 +57,31 @@ public class Restaurant {
 //        }
 
         // check if two menu items are equal
-        System.out.println("Check if custom equals function works properly..." +
-                "");
-        if (avocadoToast.equals(avocadoToast2)) {
-            System.out.println(avocadoToast.getItemName() + " is the same as " + avocadoToast2.getItemName() + "\n");
+        MenuItem a = avocadoToast;
+        MenuItem b = avocadoToast2;
+        MenuItem c = tiramisu;
+        System.out.println("Check if custom equals function works properly..." );
+        if (a.equals(b)) {
+            System.out.println(a.getItemName() + " is the same as " + b.getItemName() + "\n");
+        } else {
+            System.out.println(a.getItemName() + " is not the same as " + b.getItemName() + "\n");
+        }
+
+        System.out.println("Check if custom equals function works properly..." );
+        if (a.equals(c)) {
+            System.out.println(a.getItemName() + " is the same as " + c.getItemName() + "\n");
+        } else {
+            System.out.println(a.getItemName() + " is not the same as " + c.getItemName() + "\n");
         }
 
         // check if item is new
         System.out.println("Checking if a given item is new... ");
-        System.out.println("Item '" + tiramisu.getItemName() + "' is new? " + tiramisu.isNew());
+        System.out.println("Item '" + tiramisu.getItemName() + "' is new? " + tiramisu.isNew() + "\n");
+
+        // prevent user from adding an existing menu item
+        System.out.println("Trying to add existing item...");
+        ourMenu.addMenuItems(avocadoToast2, new Date());
+        System.out.println("Print menu to prove that avocadoToast2 was not added...");
+        System.out.println(ourMenu);
     }
 }
