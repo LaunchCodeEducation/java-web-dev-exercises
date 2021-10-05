@@ -28,13 +28,15 @@ public class Menu {
         this.menuItems = menuItems;
     }
 
-    public void addMenuItems(MenuItem item) {
+    public void addMenuItems(MenuItem item, Date lastUpdated) {
+        this.lastUpdated = lastUpdated;
         this.menuItems.add(item);
     }
 
-    public void removeItems(MenuItem item) {
+    public void removeItems(MenuItem item, Date lastUpdated) {
         if (this.menuItems.contains(item)) {
             this.menuItems.remove(item);
+            this.lastUpdated = lastUpdated;
         } else {
             System.out.println("Item is not in the menu");
         }
@@ -51,6 +53,6 @@ public class Menu {
     }
 
     public String toString(MenuItem i) {
-        return "Item name: " + i.getItemName() + ". Description: " + i.getDescription() + ". Category: " + i.getCategory() + ". Price: " + i.getPrice();
+        return "Item name: " + i.getItemName() + ". Description: " + i.getDescription() + ". Category: " + i.getCategory() + ". Price: " + i.getPrice() + "\n";
     }
 }
