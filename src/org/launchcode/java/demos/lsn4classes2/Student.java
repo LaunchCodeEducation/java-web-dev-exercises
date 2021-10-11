@@ -48,7 +48,6 @@ public class Student {
         totalQualityScore += courseCredits * grade;
         this.numberOfCredits += courseCredits;
         this.gpa = totalQualityScore/this.numberOfCredits;
-
     }
 
     public String toString() {
