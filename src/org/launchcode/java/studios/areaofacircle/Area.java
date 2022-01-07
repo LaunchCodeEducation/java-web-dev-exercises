@@ -9,7 +9,7 @@ public class Area {
         double radiusInput;
 
         do{
-            if(!input.hasNextInt() && !input.hasNextDouble()){
+            if(!input.hasNextDouble()){
                 System.out.println("Invalid input!");
                 System.exit(0);
             }
@@ -20,6 +20,8 @@ public class Area {
                 System.out.println("Enter a number above 0: ");
             }
         } while(radiusInput <= 0);
+
+        input.close();
 
         System.out.println("The area of a circle with a radius of " + radiusInput + " is: " + Circle.getArea(radiusInput));
     }
