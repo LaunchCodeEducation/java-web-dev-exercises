@@ -1,4 +1,4 @@
-package exercises;
+package exercises.class1;
 import java.util.Scanner;
 
 public class Alice {
