@@ -9,6 +9,7 @@ public class HashMapPractice{
         String studentName;
         int studentID;
 
+
         do{
             System.out.println("Enter an ID(enter zero to stop entering students): ");
             studentID = input.nextInt();
