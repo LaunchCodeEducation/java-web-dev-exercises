@@ -7,9 +7,24 @@ public class countChars {
     public static void main(String[] args){
         Scanner input = new Scanner(System.in);
 
-        System.out.println("Enter a string: ");
+        System.out.println("[HOW TO USE]\n [ENTER 'type' TO TYPE STRING]\n [ENTER 'file' TO SPECIFY FILE]");
 
-        String theMsg = input.nextLine();
+        String theMsg = "";
+        theMsg = input.nextLine().toLowerCase();
+
+        switch(theMsg) {
+            case "type":
+                System.out.println("Enter string: ");
+
+                theMsg = input.nextLine();
+                break;
+
+            case "file":
+                System.out.println("Enter File Path: ");
+
+                theMsg = ReadFile.readFile(input.nextLine());
+                break;
+        }
 
         Pattern alphaBet = Pattern.compile("[a-z]");
         Matcher isAlpha;
@@ -28,6 +43,8 @@ public class countChars {
                 }
             }
         }
+
+        System.out.println(theMsg + " counted by char looks like: ");
 
         for(Map.Entry<String, Integer> indCount : theCount.entrySet()){
             System.out.println(indCount.getKey() + " (" + indCount.getValue() + ")");
