@@ -1,12 +1,36 @@
 package org.launchcode.java.studios.countingcharacters;
+import java.util.*;
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
 
 public class countChars {
     public static void main(String[] args){
-        String theMsg = "If the product of two terms is zero then common sense says at least one of the two terms has " +
-                "to be zero to start with. So if you move all the terms over to one side, you can put the quadratics " +
-                "into a form that can be factored allowing that side of the equation to equal zero. Once you’ve done " +
-                "that, it’s pretty straightforward from there.";
+        Scanner input = new Scanner(System.in);
 
+        System.out.println("Enter a string: ");
 
+        String theMsg = input.nextLine();
+
+        Pattern alphaBet = Pattern.compile("[a-z]");
+        Matcher isAlpha;
+
+        String[] strArr = theMsg.toLowerCase().split("");
+        HashMap<String, Integer> theCount = new HashMap<>();
+
+        for(String theChar : strArr){
+            isAlpha = alphaBet.matcher(theChar);
+
+            if(isAlpha.find()) {
+                if (!theCount.containsKey(theChar)) {
+                    theCount.put(theChar, 1);
+                } else {
+                    theCount.put(theChar, theCount.get(theChar) + 1);
+                }
+            }
+        }
+
+        for(Map.Entry<String, Integer> indCount : theCount.entrySet()){
+            System.out.println(indCount.getKey() + " (" + indCount.getValue() + ")");
+        }
     }
 }
