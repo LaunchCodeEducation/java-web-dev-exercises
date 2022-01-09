@@ -19,9 +19,9 @@ public class ReadFile {
 
             scanFile.close();
         } catch (FileNotFoundException e){
-            System.out.println("File not found");
+            System.out.println("[FILE NOT FOUND WITH PATH SPECIFIED: " + filePath + "]");
 
-            e.printStackTrace();
+           // e.printStackTrace();
         }
 
         return theString;
