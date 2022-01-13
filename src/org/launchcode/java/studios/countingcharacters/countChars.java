@@ -31,11 +31,13 @@ public class countChars {
 
         String[] strArr = theMsg.toLowerCase().split("");
         HashMap<String, Integer> theCount = new HashMap<>();
+        int charCountInt = 0;
 
         for(String theChar : strArr){
             isAlpha = alphaBet.matcher(theChar);
 
             if(isAlpha.find()) {
+                charCountInt++;
                 if (!theCount.containsKey(theChar)) {
                     theCount.put(theChar, 1);
                 } else {
@@ -49,5 +51,7 @@ public class countChars {
         for(Map.Entry<String, Integer> indCount : theCount.entrySet()){
             System.out.println(indCount.getKey() + " (" + indCount.getValue() + ")");
         }
+
+        System.out.println("Total Characters in Submission: " + charCountInt);
     }
 }
