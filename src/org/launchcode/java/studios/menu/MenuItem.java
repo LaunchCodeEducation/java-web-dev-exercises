@@ -2,18 +2,18 @@ package org.launchcode.java.studios.menu;
 import java.util.*;
 
 public class MenuItem {
-    String name;
+    private String name;
     private double price;
     private String description;
     private String category;
-    private String dateAdded;
+    private Date dateAdded;
 
-    public MenuItem(String aName, double aPrice, String aDescription, String aCategory, String aDateAdded){
+    public MenuItem(String aName, double aPrice, String aDescription, String aCategory){
         this.name = aName;
         this.price = aPrice;
         this.description = aDescription;
         this.category = aCategory;
-        this.dateAdded = aDateAdded;
+        this.dateAdded = new Date();
     }
 
     public String getName(){
@@ -48,11 +48,11 @@ public class MenuItem {
         this.category = theCategory;
     }
 
-    public String getDateAdded(){
+    public Date getDateAdded(){
         return this.dateAdded;
     }
 
-    public void setDateAdded(String theDate){
+    public void setDateAdded(Date theDate){
         this.dateAdded = theDate;
     }
 }
