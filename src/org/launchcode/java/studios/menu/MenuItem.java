@@ -16,12 +16,18 @@ public class MenuItem {
         this.dateAdded = new Date();
     }
 
-    public String getName(){
-        return this.name;
+    public String toString(){
+        return "Item Name: " + getName() + "\nDescription: " + getDescription() + "\nCategory: " + getCategory() + "\nPrice: " + getPrice() + "\n";
+
+       /* if (getDateAdded().equals(getLastUpdated())) {
+            System.out.println("***NEW ITEM***");
+        }
+
+        */
     }
 
-    public void setName(String theName){
-        this.name = theName;
+    public String getName(){
+        return this.name;
     }
 
     public double getPrice(){
