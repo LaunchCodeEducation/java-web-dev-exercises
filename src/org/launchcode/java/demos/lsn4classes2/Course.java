@@ -11,7 +11,7 @@ public class Course {
     // TODO: Add your custom 'toString' method here. Make sure it returns a well-formatted String rather than
     //  just the class fields.
  public String toString(){
-     return ( "the Course for " + topic + " the teacher will be " +instructor.getLastName()+ "contains the following students "+ enrolledStudents+ ".";
+     return ( "the Course for " + topic + " the teacher will be " +instructor.getLastName()+ "contains the following students "+ enrolledStudents+ ".");
  }
 
     // TODO: Add your custom 'equals' method here. Consider which fields should match in order to call two
