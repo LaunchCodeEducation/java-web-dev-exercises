@@ -10,7 +10,10 @@ public class Alice {
         System.out.print("Type your search word and I will check if it is within the sting I have: ");
         String request = input.nextLine();
 
-        boolean result = sentence.toLowerCase().contains(request.toLowerCase());
-        System.out.println(result);
+        int index = sentence.toLowerCase().indexOf(request.toLowerCase());
+        System.out.println("Index of your request is: " + index + ". The length of the request: " + request.length() + ".");
+
+        String updatedSentence = sentence.substring(0, index) + sentence.substring(index + request.length());
+        System.out.println(updatedSentence);
     }
 }
