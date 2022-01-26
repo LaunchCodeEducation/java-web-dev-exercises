@@ -5,14 +5,26 @@ public class Area {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-        System.out.print("Please type the radius of a circle: ");
+        boolean runLoop = true;
+        double radius = 0;
+        double area;
 
-        double radius = input.nextDouble();
-
-        double area = Circle.getCircle((radius));
-//        double PI = 3.14159;
-//        double area = PI * radius * radius;
-
-        System.out.print("The are of a circle of radius " + radius + " is: " + area);
+        while (runLoop) {
+            try {
+                System.out.println("Please type the radius of a circle: ");
+                radius = input.nextDouble();
+                if (radius < 0) {
+                    System.err.println("Cannot be negative");
+                    continue;
+                }
+                area = Circle.getCircle(radius);
+                System.out.println("The area of a circle of radius " + radius + " is: " + area);
+                runLoop = false;
+            } catch (Exception e) {
+                System.err.println("Radius has to be a number");
+                input.next();
+            }
+        }
+        input.close();
     }
 }
