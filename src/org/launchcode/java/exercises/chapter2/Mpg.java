@@ -14,5 +14,7 @@ public class Mpg {
         double mpg = miles / gas;
         System.out.println("Your MPG for the trip is: " + mpg);
 
+        input.close();
+
     }
 }

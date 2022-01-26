@@ -15,5 +15,7 @@ public class Alice {
 
         String updatedSentence = sentence.substring(0, index) + sentence.substring(index + request.length());
         System.out.println(updatedSentence);
+
+        input.close();
     }
 }
