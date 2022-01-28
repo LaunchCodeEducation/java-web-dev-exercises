@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class ArrayListPractice {
 
-    public static int sum(ArrayList arr) {
+    private int sum(ArrayList arr) {
         int result = 0;
         Integer[] nativeArray = new Integer[arr.size()];
         arr.toArray(nativeArray);
@@ -17,6 +17,7 @@ public class ArrayListPractice {
     }
 
     public static void main(String[] args) {
+        ArrayListPractice func = new ArrayListPractice();
         ArrayList<Integer> numbers = new ArrayList<>();
         numbers.add(23);
         numbers.add(56);
@@ -31,6 +32,6 @@ public class ArrayListPractice {
         numbers.add(63);
         numbers.add(43);
 
-        System.out.println(sum(numbers));
+        System.out.println(func.sum(numbers));
     }
 }
