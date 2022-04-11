@@ -31,4 +31,4 @@ that will affect your coursework. When you start your prep-work for each
 lesson of the course, be sure to fetch to stay up to date with the 
 latest changes. 
 
-Group 1
+Group 2
