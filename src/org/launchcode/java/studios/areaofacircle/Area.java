@@ -9,7 +9,7 @@ public class Area {
 
         input = new Scanner(System.in);
 
-        System.out.println("Enter a radius");
+        System.out.println("Enter a radius ");
         Double radius = input.nextDouble();
 
         System.out.println(Circle.getArea(radius));
