@@ -9,7 +9,7 @@ public class CountingCharacters {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.println("Enter a string of Characters : ");
-        String quote = input.nextLine().toLowerCase(Locale.ROOT) ;
+        String quote = input.nextLine().toLowerCase(Locale.ROOT);
 
         input.close();
 
@@ -23,12 +23,12 @@ public class CountingCharacters {
             if (count.containsKey(i)) {
                 count.put(i, count.get(i) + 1);
 
-            }else{
-                count.put(i,1);
+            } else {
+                count.put(i, 1);
             }
 
         }
-        for(Map.Entry entry : count.entrySet()){
+        for (Map.Entry entry : count.entrySet()) {
             System.out.println(entry.getKey() + " : " + entry.getValue());
         }
     }
