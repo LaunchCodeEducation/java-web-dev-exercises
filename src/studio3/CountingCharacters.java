@@ -2,6 +2,7 @@ package studio3;
 
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class CountingCharacters {
 
@@ -17,9 +18,16 @@ public class CountingCharacters {
 
         for(char i:charactersInString) {
 
-            if(count.containsKey(i));
-
+            if (count.containsKey(i)) {
+                count.put(i, count.get(i) + 1);
+            } else {
+                count.put(i, 1);
+            }
+        }
+        for (Map.Entry entry : count.entrySet()){
+            System.out.println(entry.getKey() + " " + entry.getValue());
+        }
+//        main(quote);
         }
 
-}
 }
