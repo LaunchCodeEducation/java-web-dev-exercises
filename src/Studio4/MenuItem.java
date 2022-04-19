@@ -2,11 +2,21 @@ package Studio4;
 
 public class MenuItem {
 
-    public static void main(String[] args){
-        String name;
-        String price;
-        String descripton;
-        String category;
-        boolean ifNew;
-    }
+        private String name;
+        private String price;
+        private String description;
+        private String category;
+        private boolean ifNew;
+
+        public MenuItem(String name, String price, String description, String category,boolean ifNew){
+            this.name= name;
+            this.price= price;
+            this.description= description;
+            this.category= category;
+            this.ifNew= ifNew;
+
+        }
+
+
+
 }
