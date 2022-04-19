@@ -1,3 +1,5 @@
+package Studio4;
+
 public class MenuItem {
 
     public static void main(String[] args){
