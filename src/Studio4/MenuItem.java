@@ -12,7 +12,7 @@ public class MenuItem {
 		this.price= price;
 		this.description= description;
 		this.category= category;
-		this.ifNew= ifNew;
+		this.ifNew= true;
 	}
 
 	// getters
