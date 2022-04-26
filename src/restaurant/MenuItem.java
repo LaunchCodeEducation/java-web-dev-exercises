@@ -1,4 +1,4 @@
-package studio4;
+package restaurant;
 
 public class MenuItem {
 
