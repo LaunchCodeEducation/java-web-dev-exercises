@@ -1,4 +1,4 @@
-package Studio4;
+package studio4;
 
 public class MenuItem {
 
