@@ -1,10 +1,10 @@
 package funWithQuizzes;
 
-public class Question {
+public class Questions {
 
     private static Integer iD;
     private Integer nextId = 1;
-    private String questions;
+    private String question;
     private String correctAnswer;
     private boolean isCorrect;
 
@@ -17,11 +17,12 @@ public class Question {
 //        nextId++;
 //    }
 
-    public Question(String questions, String correctAnswer, boolean isCorrect){
-        this.questions = questions;
+    public Questions(String question, String correctAnswer){
+        this.question = question;
         this.correctAnswer = correctAnswer;
-        this.isCorrect = isCorrect;
+        //this.isCorrect = isCorrect;
         this.iD = nextId;
         nextId++;
     }
+
 }
