@@ -12,6 +12,7 @@ public class AlicesWonderland {
         Scanner input = new Scanner(System.in);
         System.out.println("Pick a word to find: ");
         String searchTerm = input.nextLine();
+        input.close();
 
     if(alice.toLowerCase().contains(searchTerm)) {
         System.out.println("The string includes " + searchTerm + ".");

@@ -13,6 +13,7 @@ public class GasUsed {
         System.out.println("How many gallons of gas did you use? ");
         Double gallons = input2.nextDouble();
         input.close();
+        input2.close();
 
         double gallonsPerMile = miles / gallons;
         System.out.println("You are running on " + gallonsPerMile + " gpm.");

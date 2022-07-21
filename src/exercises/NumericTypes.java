@@ -16,6 +16,8 @@ public class NumericTypes {
     int rectangleArea = length * width;
     System.out.println("The area of the rectangle is " + rectangleArea);
 
+    input.close();
+    input2.close();
 
     }
 
