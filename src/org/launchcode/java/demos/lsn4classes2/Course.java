@@ -1,6 +1,7 @@
 package org.launchcode.java.demos.lsn4classes2;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Course {
     private String topic;
@@ -15,3 +16,4 @@ public class Course {
     //  Course objects equal.
 
 }
+
