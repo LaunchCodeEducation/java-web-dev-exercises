@@ -8,7 +8,7 @@ public class Student {
     private String name;
     private int studentId;
     private int numberOfCredits = 0;
-    private double gpa = 0.0;
+    private double gpa = 0;
 
     public Student(String name, int studentId, int numberOfCredits, double gpa) {
         this.name = name;
@@ -20,9 +20,9 @@ public class Student {
 
     public void setStudentId(int studentId) {this.studentId = studentId;}
 
-//    public void setGpa(double gpa) {this.gpa = gpa;}
+    public void setGpa(double gpa) {this.gpa = gpa;}
 
-//    public void setNumberOfCredits(int numberOfCredits) {this.numberOfCredits = numberOfCredits;}
+    public void setNumberOfCredits(int numberOfCredits) {this.numberOfCredits = numberOfCredits;}
 
     public String getName() {return this.name;}
 
