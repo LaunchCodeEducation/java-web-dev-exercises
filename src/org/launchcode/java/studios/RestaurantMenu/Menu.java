@@ -1,23 +1,39 @@
 package org.launchcode.java.studios.RestaurantMenu;
 
-import java.time.Month;
-import java.time.MonthDay;
+import java.util.ArrayList;
 import java.util.Date;
 
 
 public class Menu {
 
-
-    public static void main(String[] args) {
-
-
-
-        MenuItem fries = new MenuItem("fries", "appetizers", 4, false);
-        MenuItem burger = new MenuItem("burger", "main course", 5, true);
-        MenuItem cake = new MenuItem("cake", "dessert", 4, false);
-
-        System.out.println("Name: " + fries.getName() + " Price: " + fries.getPrice() + " New Item: " + fries.getNewItem());
-
-        System.out.println("This menu was updated: " + new Date());
+    public ArrayList<MenuItem> getItems() {
+        return items;
     }
+
+    public void setItems(ArrayList<MenuItem> items) {
+        this.items = items;
+    }
+
+    private ArrayList<MenuItem> items;
+
+    private Date lastUpdated;
+
+
+
+
+
+    public Menu(ArrayList<MenuItem> items) {
+        this.items = items;
+
+    }
+
+    public ArrayList<MenuItem> menuAddItem(MenuItem item) {
+        this.items.add(item);
+        return items;
+    }
+
+    static Date getDate() {
+            return new Date();
+        }
+
 }
