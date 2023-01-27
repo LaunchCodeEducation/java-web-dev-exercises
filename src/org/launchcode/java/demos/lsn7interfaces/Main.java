@@ -38,5 +38,6 @@ public class Main {
             System.out.println(cones.get(i).getName() + ": $" + cones.get(i).getCost());
         }
         // TODO: Print the 'flavors' and 'cones' lists (in a clear manner) to verify the sorting.
+        // Commit test
     }
 }
